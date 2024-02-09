@@ -1,3 +1,4 @@
 {
-  "extends": ["next/core-web-vitals", "airbnb-base"]
+  "extends": ["next/core-web-vitals", "airbnb-base"],
+  "rules": {"import/no-extraneous-dependencies": ["error", {"includeInternal": true, "includeTypes": true}]}
 }
