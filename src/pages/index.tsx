@@ -7,6 +7,8 @@ import { useDispatch } from 'react-redux';
 import { actions as articlesActions } from '@/slices/postsSlice';
 import { Item, RestoredItem } from '@/types/types';
 import restoreData from '@/utils/restoreData';
+import Modal from '@/components/Modal';
+import CommentForm from '@/components/CommentForm';
 
 export default function Home({ restorted }: { restorted: Array<Item> }) {
   const dispatch = useDispatch();
@@ -18,6 +20,7 @@ export default function Home({ restorted }: { restorted: Array<Item> }) {
   return (
     <Layout>
       <MainContainer />
+      <Modal />
     </Layout>
   );
 }

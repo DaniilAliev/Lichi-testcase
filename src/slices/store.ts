@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { combineReducers } from '@reduxjs/toolkit';
 import articlesReducer from './postsSlice';
+import modalReducer from './modalSlice';
 
 const rootReducer = combineReducers({
   articles: articlesReducer,
+  modal: modalReducer,
   // Другие редюсеры
 });
 
