@@ -10,6 +10,11 @@ const articlesSlice = createSlice({
   initialState,
   reducers: {
     addArticles: articlesAdapter.setAll,
+    addArticle: (state, { payload }) => {
+      const { id } = payload;
+      state.ids.unshift(id);
+      state.entities[id] = payload;
+    },
   },
 });
 
