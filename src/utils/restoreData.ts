@@ -1,4 +1,4 @@
-import { Item, RestoredItem } from "@/types/types";
+import { Item, RestoredItem } from '@/types/types.ts';
 
 const restoreData = (item: Item): RestoredItem => {
   const { id, title, body } = item;

@@ -20,12 +20,16 @@ const editSlice = createSlice({
   initialState,
   reducers: {
     startEdit: (state, { payload }) => (
-      state = { isEdit: true, id: payload.id, body: payload.body }
+      {
+        ...state, isEdit: true, id: payload.id, body: payload.body,
+      }
     ),
-    endEdit: (state, { payload }) => (
-      state = { isEdit: false, id: null, body: null }
+    endEdit: (state) => (
+      {
+        ...state, isEdit: false, id: null, body: null,
+      }
     ),
-  }
+  },
 });
 
 export const { actions } = editSlice;
