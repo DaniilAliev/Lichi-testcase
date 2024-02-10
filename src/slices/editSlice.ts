@@ -24,9 +24,9 @@ const editSlice = createSlice({
         ...state, isEdit: true, id: payload.id, body: payload.body,
       }
     ),
-    endEdit: (state) => (
+    endEdit: (state, { payload }) => (
       {
-        ...state, isEdit: false, id: null, body: null,
+        ...state, isEdit: payload.isEdit, id: null, body: null,
       }
     ),
   },

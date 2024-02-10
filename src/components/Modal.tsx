@@ -8,7 +8,7 @@ import { selectors as modalSelectors } from '@/slices/modalSlice.ts';
 import CommentForm from './CommentForm.tsx';
 import CommentsContainer from './CommentsContainer.tsx';
 
-export const Modal = () => {
+const Modal = () => {
   const ref = useRef<Element | null>(null);
 
   const {

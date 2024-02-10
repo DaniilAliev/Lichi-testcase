@@ -15,8 +15,10 @@ const commentsSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(editActions.endEdit, (state, { payload }) => {
-      const { id, body } = payload;
-      commentsAdapter.updateOne(state, { id, changes: { body } as any });
+      if (payload) {
+        const { id, body } = payload;
+        commentsAdapter.updateOne(state, { id, changes: { body } as any });
+      }
     });
   },
 });

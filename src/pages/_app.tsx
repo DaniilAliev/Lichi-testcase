@@ -2,7 +2,7 @@ import type { AppProps } from 'next/app';
 import '../styles/globals.css';
 import { Roboto } from 'next/font/google';
 import { Provider } from 'react-redux';
-import store from '@/slices/store';
+import store from '@/slices/store.ts';
 
 const inter = Roboto({ subsets: ['latin'], weight: ['400', '700'] });
 

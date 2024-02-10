@@ -5,7 +5,7 @@ import { EntityId } from '@reduxjs/toolkit';
 import { actions as editActions } from '@/slices/editSlice.ts';
 
 type CommentType = {
-  id: EntityId | number,
+  id: EntityId,
   postId?: number,
   body?: string,
 }
@@ -21,9 +21,9 @@ const CommentsContainer: FC<CommentsContainerType> = ({ id, type }) => {
 
   const dispatch = useDispatch();
 
-  const handleEdit = (commentId: number, body: string) => {
+  const handleEdit = (commentId: EntityId, body: string | undefined) => {
     const dataToDispatch = {
-      id: commentId, body,
+      id: commentId, body, isEdit: false,
     };
 
     dispatch(editActions.startEdit(dataToDispatch));
@@ -38,7 +38,7 @@ const CommentsContainer: FC<CommentsContainerType> = ({ id, type }) => {
           {item.body}
           {type === 'modal'
             && <button
-              onClick={() => (typeof item.id === 'number' && item.body) && handleEdit(item.id, item.body)}
+              onClick={() => handleEdit(item.id, item.body)}
               className='pl-2 text-stone-400 hover:text-stone-500 '
               type='button'>
               Edit
