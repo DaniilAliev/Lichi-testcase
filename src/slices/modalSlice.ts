@@ -6,7 +6,7 @@ export const modalAdapter = createEntityAdapter();
 type InitialState = {
   isOpen: boolean,
   title: string | null,
-  body:string | null,
+  body: string | null,
   postId: number | null,
 }
 

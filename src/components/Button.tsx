@@ -1,4 +1,4 @@
-import { actions as modalActions} from '@/slices/modalSlice';
+import { actions as modalActions } from '@/slices/modalSlice';
 import { ButtonType } from '@/types/types';
 import classNames from 'classnames';
 import { FC } from 'react';
@@ -32,7 +32,7 @@ const Button: FC<ButtonType> = ({ type }) => {
 
   return (
     <button
-      type='submit'
+      type={type !== 'close' ? 'submit' : 'button'}
       className={btnClass}
       onClick={handleClick}
     >

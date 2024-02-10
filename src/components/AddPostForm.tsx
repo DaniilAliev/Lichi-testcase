@@ -5,24 +5,20 @@ import TextArea from './TextArea';
 import { useDispatch, useSelector } from 'react-redux';
 import { actions as articlesArctions } from '@/slices/postsSlice';
 import { selectors as articleSelectors } from '@/slices/postsSlice';
-
-type DataForm = {
-  title: string,
-  body: string,
-}
+import { DataFormType } from '@/types/types';
 
 const AddPostForm = () => {
   const articlesLength = useSelector(articleSelectors.selectAll).length;
 
   const {
     register, handleSubmit, reset,
-  } = useForm<DataForm>({
+  } = useForm<DataFormType>({
     defaultValues: {},
   });
 
   const dispatch = useDispatch();
 
-  const submit = (data: DataForm): void => {
+  const submit = (data: DataFormType): void => {
     const restoredData = { ...data, id: articlesLength + 1 };
     dispatch(articlesArctions.addArticle(restoredData));
     reset();
