@@ -3,15 +3,17 @@ import {
 } from 'react';
 import { createPortal } from 'react-dom';
 import { motion } from 'framer-motion';
-import CommentForm from './CommentForm';
 import { useSelector } from 'react-redux';
 import { selectors as modalSelectors } from '@/slices/modalSlice';
+import CommentForm from './CommentForm';
 import CommentsContainer from './CommentsContainer';
 
 export const Modal = () => {
   const ref = useRef<Element | null>(null);
 
-  const { title, body, isOpen, postId } = useSelector(modalSelectors);
+  const {
+    title, body, isOpen, postId,
+  } = useSelector(modalSelectors);
 
   const modalVariants = {
     hidden: { opacity: 0, y: 50 },
@@ -42,13 +44,13 @@ export const Modal = () => {
           animate="visible"
           exit="hidden"
           variants={modalVariants}
-          onClick={(e) => e.stopPropagation()}
+          // onClick={(e) => e.stopPropagation()}
         >
           <div className="flex items-center justify-center size-full max-w-screen-xl grow">
-            <div className="mx-10 max-w-screen-xl border-2 border-stone-200 rounded-2xl p-5 bg-white grow">
+            <div className="mx-5 max-w-screen-xl border-2 border-stone-400 rounded-2xl p-5 bg-white grow">
               <h1 className="text-3xl mb-4">{title}</h1>
               <p className="mb-4">{body}</p>
-              <CommentsContainer id={postId} />
+              <CommentsContainer id={postId} type='modal'/>
               <CommentForm />
             </div>
           </div>

@@ -3,12 +3,13 @@ import { combineReducers } from '@reduxjs/toolkit';
 import articlesReducer from './postsSlice';
 import modalReducer from './modalSlice';
 import commentsReducer from './commentsSlice';
+import editReducer from './editSlice';
 
 const rootReducer = combineReducers({
   articles: articlesReducer,
   modal: modalReducer,
   comments: commentsReducer,
-  // Другие редюсеры
+  edit: editReducer,
 });
 
 const store = configureStore({

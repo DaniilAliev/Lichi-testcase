@@ -1,4 +1,5 @@
 import { createSlice, createEntityAdapter } from '@reduxjs/toolkit';
+import { actions as editActions } from './editSlice';
 import { RootState } from './store.ts';
 
 export const commentsAdapter = createEntityAdapter();
@@ -10,7 +11,16 @@ const commentsSlice = createSlice({
   initialState,
   reducers: {
     addComment: commentsAdapter.addOne,
+    updateComment: commentsAdapter.updateOne,
   },
+  extraReducers: (builder) => {
+    builder.addCase(editActions.endEdit, (state, { payload }) => {
+      const { id, body } = payload;
+      console.log(id, payload)
+      commentsAdapter.updateOne(state, { id, changes: { body }, })
+    }
+    )
+  }
 });
 
 export const { actions } = commentsSlice;

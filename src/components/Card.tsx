@@ -27,7 +27,7 @@ const Card: FC<{ item: RestoredItem }> = ({ item }) => {
       <p className="line-clamp-2 mb-4">
         {item.body}
       </p>
-      <CommentsContainer id={id}/>
+      <CommentsContainer id={id} type="card"/>
     </div>);
 };
 

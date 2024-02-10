@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC } from 'react';
 
 const Input: FC<{ field: any }> = ({ field }) => (
   <input

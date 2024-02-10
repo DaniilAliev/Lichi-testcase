@@ -10,6 +10,8 @@ export type RestoredItem = Omit<Item, 'userId'>;
 export type TextAreaType = {
   type: 'post' | 'comment',
   field: any,
+  value: string | null,
+  setValue: (state: string) => void
 }
 
 export type ButtonType = {
