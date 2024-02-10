@@ -29,13 +29,13 @@ const AddPostForm = () => {
   };
 
   return (
-		<div className="max-w-screen-lg h-10 size-full h-full rounded-2xl my-3 ">
-			<form action="" onSubmit={handleSubmit(submit)}>
-				<Input field={register('title')}/>
-				<TextArea type={'post'} field={register('body')}/>
-				<Button type={'post'}/>
-			</form>
-		</div>
+    <div className="max-w-screen-lg h-10 size-full h-full rounded-2xl my-3 ">
+      <form action="" onSubmit={handleSubmit(submit)}>
+        <Input field={register('title')} />
+        <TextArea type={'post'} field={register('body')} />
+        <Button type={'post'} />
+      </form>
+    </div>
   );
 };
 

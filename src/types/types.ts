@@ -12,4 +12,6 @@ export type TextAreaType = {
   field: any,
 }
 
-export type ButtonType = Omit<TextAreaType, 'field'>;
+export type ButtonType = {
+  type: string
+};

@@ -4,7 +4,6 @@ import { Item, RestoredItem } from "@/types/types";
 import { useDispatch } from "react-redux";
 import { actions as modalActions } from "@/slices/modalSlice";
 
-
 const Card: FC<{ item: RestoredItem }> = ({ item }) => {
   const dispatch = useDispatch();
 
