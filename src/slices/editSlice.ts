@@ -1,5 +1,5 @@
 import { createSlice, createEntityAdapter } from '@reduxjs/toolkit';
-import { RootState } from './store';
+import type { RootState } from './store.ts';
 
 export const editAdapter = createEntityAdapter();
 

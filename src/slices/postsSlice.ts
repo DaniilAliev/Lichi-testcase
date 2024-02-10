@@ -1,5 +1,5 @@
 import { createSlice, createEntityAdapter } from '@reduxjs/toolkit';
-import { RootState } from './store.ts';
+import type { RootState } from './store.ts';
 
 export const articlesAdapter = createEntityAdapter();
 
@@ -12,8 +12,14 @@ const articlesSlice = createSlice({
     addArticles: articlesAdapter.setAll,
     addArticle: (state, { payload }) => {
       const { id } = payload;
-      state.ids.unshift(id);
-      state.entities[id] = payload;
+      return {
+        ...state,
+        ids: [id, ...state.ids],
+        entities: {
+          ...state.entities,
+          [id]: payload,
+        },
+      };
     },
   },
 });

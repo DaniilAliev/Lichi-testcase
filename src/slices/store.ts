@@ -1,9 +1,8 @@
-import { configureStore } from '@reduxjs/toolkit';
-import { combineReducers } from '@reduxjs/toolkit';
-import articlesReducer from './postsSlice';
-import modalReducer from './modalSlice';
-import commentsReducer from './commentsSlice';
-import editReducer from './editSlice';
+import { configureStore, combineReducers } from '@reduxjs/toolkit';
+import articlesReducer from './postsSlice.ts';
+import modalReducer from './modalSlice.ts';
+import commentsReducer from './commentsSlice.ts';
+import editReducer from './editSlice.ts';
 
 const rootReducer = combineReducers({
   articles: articlesReducer,
@@ -18,5 +17,4 @@ const store = configureStore({
 
 export default store;
 
-export type AppDispatch = typeof store.dispatch;
 export type RootState = ReturnType<typeof store.getState>;

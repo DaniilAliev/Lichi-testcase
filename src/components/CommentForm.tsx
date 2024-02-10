@@ -1,14 +1,13 @@
-import { CommentFormType } from '@/types/types';
+import { CommentFormType } from '@/types/types.ts';
 import { useForm } from 'react-hook-form';
 import _ from 'lodash';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { actions as commentsActions } from '@/slices/commentsSlice';
-import { actions as editActions } from '@/slices/editSlice';
-import { selectors as modalSelectors } from '@/slices/modalSlice';
-import { selectors as editSelectors } from '@/slices/editSlice';
-import TextArea from './TextArea';
-import Button from './Button';
+import { actions as commentsActions } from '@/slices/commentsSlice.ts';
+import { actions as editActions, selectors as editSelectors } from '@/slices/editSlice.ts';
+import { selectors as modalSelectors } from '@/slices/modalSlice.ts';
+import TextArea from './TextArea.tsx';
+import Button from './Button.tsx';
 
 const CommentForm = () => {
   const { postId } = useSelector(modalSelectors);

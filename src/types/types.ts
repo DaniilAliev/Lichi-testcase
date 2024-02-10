@@ -1,6 +1,8 @@
+import { EntityId } from '@reduxjs/toolkit';
+
 export type Item = {
   userId: number,
-  id: number,
+  id: EntityId,
   title: string,
   body: string,
 };
@@ -11,11 +13,12 @@ export type TextAreaType = {
   type: 'post' | 'comment',
   field: any,
   value: string | null,
-  setValue: (state: string) => void
+  // eslint-disable-next-line no-unused-vars
+  setValue: (state: string | null) => void
 }
 
 export type ButtonType = {
-  type: string
+  type: 'post' | 'submit' | 'close';
 };
 
 export type DataFormType = {

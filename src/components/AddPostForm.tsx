@@ -1,12 +1,11 @@
-import { Controller, useForm } from 'react-hook-form';
-import Button from './Button';
-import Input from './Input';
-import TextArea from './TextArea';
+import { useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
-import { actions as articlesArctions } from '@/slices/postsSlice';
-import { selectors as articleSelectors } from '@/slices/postsSlice';
-import { DataFormType } from '@/types/types';
+import { actions as articlesArctions, selectors as articleSelectors } from '@/slices/postsSlice.ts';
+import { DataFormType } from '@/types/types.ts';
 import { useState } from 'react';
+import TextArea from './TextArea.tsx';
+import Input from './Input.tsx';
+import Button from './Button.tsx';
 
 const AddPostForm = () => {
   const articlesLength = useSelector(articleSelectors.selectAll).length;

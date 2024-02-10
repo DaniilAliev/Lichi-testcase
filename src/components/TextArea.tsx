@@ -1,7 +1,7 @@
-import { FC, useEffect, useState } from 'react';
-import { TextAreaType } from '@/types/types';
+import { ChangeEvent, FC, useEffect } from 'react';
+import { TextAreaType } from '@/types/types.ts';
 import { useSelector } from 'react-redux';
-import { selectors as editSelectors } from '@/slices/editSlice';
+import { selectors as editSelectors } from '@/slices/editSlice.ts';
 
 const TextArea: FC<TextAreaType> = ({
   type, field, value, setValue,

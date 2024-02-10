@@ -1,11 +1,11 @@
-import { actions as modalActions } from '@/slices/modalSlice';
-import { ButtonType } from '@/types/types';
+import { actions as modalActions } from '@/slices/modalSlice.ts';
+import { ButtonType } from '@/types/types.ts';
 import classNames from 'classnames';
 import { FC } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectors as editSelectors } from '@/slices/editSlice';
+import { selectors as editSelectors } from '@/slices/editSlice.ts';
 
-const getButton = (type: string): string => {
+const getButton = (type: 'post' | 'submit' | 'close'): string => {
   const mapping = {
     post: 'Post',
     submit: 'Submit',

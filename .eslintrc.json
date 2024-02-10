@@ -1,4 +1,31 @@
 {
-  "extends": ["next/core-web-vitals", "airbnb-base"],
-  "rules": {"import/no-extraneous-dependencies": ["error", {"includeInternal": true, "includeTypes": true}]}
+  "extends": [
+    "next/core-web-vitals",
+    "airbnb-base"
+  ],
+  "rules": {
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": false,
+        "optionalDependencies": false,
+        "peerDependencies": false
+      }
+    ],
+    "no-param-reassign": ["error",
+      {
+      "props": true,
+      "ignorePropertyModificationsFor": [
+        "state"
+        ]
+      }
+    ],
+    "import/order": 2,
+    "import/no-cycle": [
+      2,
+      {
+        "maxDepth": 2
+      }
+    ]
+  }
 }

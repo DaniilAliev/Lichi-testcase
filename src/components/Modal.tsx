@@ -4,9 +4,9 @@ import {
 import { createPortal } from 'react-dom';
 import { motion } from 'framer-motion';
 import { useSelector } from 'react-redux';
-import { selectors as modalSelectors } from '@/slices/modalSlice';
-import CommentForm from './CommentForm';
-import CommentsContainer from './CommentsContainer';
+import { selectors as modalSelectors } from '@/slices/modalSlice.ts';
+import CommentForm from './CommentForm.tsx';
+import CommentsContainer from './CommentsContainer.tsx';
 
 export const Modal = () => {
   const ref = useRef<Element | null>(null);
@@ -44,7 +44,7 @@ export const Modal = () => {
           animate="visible"
           exit="hidden"
           variants={modalVariants}
-          // onClick={(e) => e.stopPropagation()}
+          onClick={(e) => e.stopPropagation()}
         >
           <div className="flex items-center justify-center size-full max-w-screen-xl grow">
             <div className="mx-5 max-w-screen-xl border-2 border-stone-400 rounded-2xl p-5 bg-white grow">

@@ -1,9 +1,8 @@
-import { FC } from "react";
-import CommentForm from "./CommentForm";
-import { Item, RestoredItem } from "@/types/types";
-import { useDispatch } from "react-redux";
-import { actions as modalActions } from "@/slices/modalSlice";
-import CommentsContainer from "./CommentsContainer";
+import { FC } from 'react';
+import { RestoredItem } from '@/types/types.ts';
+import { useDispatch } from 'react-redux';
+import { actions as modalActions } from '@/slices/modalSlice.ts';
+import CommentsContainer from './CommentsContainer.tsx';
 
 const Card: FC<{ item: RestoredItem }> = ({ item }) => {
   const dispatch = useDispatch();
@@ -27,7 +26,7 @@ const Card: FC<{ item: RestoredItem }> = ({ item }) => {
       <p className="line-clamp-2 mb-4">
         {item.body}
       </p>
-      <CommentsContainer id={id} type="card"/>
+      <CommentsContainer id={id} type="card" />
     </div>);
 };
 
