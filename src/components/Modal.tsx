@@ -8,22 +8,22 @@ import { selectors as modalSelectors } from '@/slices/modalSlice.ts';
 import CommentsContainer from './CommentsContainer.tsx';
 import Form from './Form.tsx';
 
+const modalVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0 },
+};
+
+const overlayVariants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1 },
+};
+
 const Modal = () => {
   const ref = useRef<Element | null>(null);
 
   const {
     title, body, isOpen, postId,
   } = useSelector(modalSelectors);
-
-  const modalVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0 },
-  };
-
-  const overlayVariants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1 },
-  };
 
   useEffect(() => {
     ref.current = document.querySelector<HTMLElement>('#portal');

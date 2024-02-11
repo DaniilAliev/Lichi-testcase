@@ -1,24 +1,10 @@
 import { FC } from 'react';
 import { RestoredItem } from '@/types/types.ts';
-import { useDispatch } from 'react-redux';
-import { actions as modalActions } from '@/slices/modalSlice.ts';
 import { motion } from 'framer-motion';
 import CommentsContainer from './CommentsContainer.tsx';
 
-const Card: FC<{ item: RestoredItem }> = ({ item }) => {
-  const dispatch = useDispatch();
-
+const Card: FC<{ item: RestoredItem, handleClick: any }> = ({ item, handleClick }) => {
   const { title, body, id } = item;
-
-  const handleClick = () => {
-    const dataToState = {
-      title, body, postId: id,
-    };
-
-    setTimeout(() => {
-      dispatch(modalActions.openModal(dataToState));
-    }, 100);
-  };
 
   return (
     <motion.div
@@ -29,7 +15,7 @@ const Card: FC<{ item: RestoredItem }> = ({ item }) => {
     >
       <div
         className="h-full border-2 border-stone-200 rounded-2xl my-3 px-5 pt-5 transition-colors duration-200 hover:bg-stone-400 hover:text-white cursor-pointer"
-        onClick={handleClick}
+        onClick={() => handleClick(title, body, id)}
       >
         <h2 className="text-3xl mb-4">{item.title}</h2>
         <p className="line-clamp-2 mb-4">

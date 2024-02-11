@@ -33,7 +33,7 @@ const CommentsContainer: FC<CommentsContainerType> = ({ id, type }) => {
     <div className="py-4 border-t-2">
       <ul className="text-xl">Comments:</ul>
       {filteredComments.length !== 0
-        ? filteredComments.map((item: CommentType) => <li key={item.body} className='list-none'>
+        ? filteredComments.map((item: CommentType) => <li key={`${item.body}${item.id}`} className='list-none'>
           <span className='font-semibold'>Your comment: </span>
           {item.body}
           {type === 'modal'
