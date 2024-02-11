@@ -1,7 +1,7 @@
 import { actions as modalActions } from '@/slices/modalSlice.ts';
 import { ButtonType } from '@/types/types.ts';
 import classNames from 'classnames';
-import { FC } from 'react';
+import { FC, memo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectors as editSelectors } from '@/slices/editSlice.ts';
 
@@ -23,7 +23,7 @@ const Button: FC<ButtonType> = ({ type }) => {
     'hover:bg-stone-500': type !== 'close',
     'bg-gray-400': type === 'close',
     'hover:bg-gray-500': type === 'close',
-    'bg-gray-200': type === 'close' && isEdit === true,
+    'bg-gray-100': type === 'close' && isEdit === true,
   });
 
   const dispatch = useDispatch();
@@ -46,4 +46,4 @@ const Button: FC<ButtonType> = ({ type }) => {
   );
 };
 
-export default Button;
+export default memo(Button);

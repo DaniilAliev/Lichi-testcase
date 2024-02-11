@@ -5,9 +5,9 @@ import { actions as articlesActions } from '@/slices/postsSlice.ts';
 import { Item, RestoredItem } from '@/types/types.ts';
 import restoreData from '@/utils/restoreData.ts';
 import Modal from '@/components/Modal.tsx';
-import Layout from '../components/Layout.tsx';
-import MainContainer from '../components/MainContainer.tsx';
-import API_ROUTES from '../routes/index.ts';
+import Layout from '@/components/Layout.tsx';
+import MainContainer from '@/components/MainContainer.tsx';
+import API_ROUTES from '@/routes/index.ts';
 
 export default function Home({ restorted }: { restorted: Array<Item> }) {
   const dispatch = useDispatch();
