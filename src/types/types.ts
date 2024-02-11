@@ -25,5 +25,3 @@ export type DataFormType = {
   title?: string,
   body: string,
 }
-
-// export type CommentFormType = Omit<DataFormType, 'title'>;

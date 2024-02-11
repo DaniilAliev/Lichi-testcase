@@ -10,6 +10,7 @@ import Button from './Button.tsx';
 const AddPostForm = () => {
   const articlesLength = useSelector(articleSelectors.selectAll).length;
   const [value, setValue] = useState<string | null>('');
+  const [error, setError] = useState<string | null>('');
 
   const {
     register, handleSubmit, reset,
@@ -20,10 +21,15 @@ const AddPostForm = () => {
   const dispatch = useDispatch();
 
   const submit = (data: DataFormType): void => {
-    const restoredData = { ...data, id: articlesLength + 1 };
-    dispatch(articlesArctions.addArticle(restoredData));
-    reset();
-    setValue('');
+    if (!data.title || !data.body) {
+      setError('Not so fast! Put both header and body inputs first, and then submit');
+    } else {
+      const restoredData = { ...data, id: articlesLength + 1 };
+      dispatch(articlesArctions.addArticle(restoredData));
+      reset();
+      setValue('');
+      setError('');
+    }
   };
 
   return (
@@ -32,6 +38,7 @@ const AddPostForm = () => {
         <Input field={register('title')} />
         <TextArea type={'post'} field={register('body')} value={value} setValue={setValue} />
         <Button type={'post'} />
+        <p className='pt-3 text-red-500'>{error}</p>
       </form>
     </div>
   );
