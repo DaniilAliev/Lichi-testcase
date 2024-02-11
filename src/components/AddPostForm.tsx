@@ -28,7 +28,7 @@ const AddPostForm = () => {
 
   return (
     <div className="max-w-screen-lg h-10 size-full h-full rounded-2xl my-3 ">
-      <form action="" onSubmit={handleSubmit(submit)}>
+      <form onSubmit={handleSubmit(submit)}>
         <Input field={register('title')} />
         <TextArea type={'post'} field={register('body')} value={value} setValue={setValue} />
         <Button type={'post'} />

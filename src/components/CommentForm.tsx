@@ -1,4 +1,4 @@
-import { CommentFormType } from '@/types/types.ts';
+import { DataFormType } from '@/types/types.ts';
 import { useForm } from 'react-hook-form';
 import _ from 'lodash';
 import { useState } from 'react';
@@ -20,11 +20,11 @@ const CommentForm = () => {
 
   const {
     register, handleSubmit,
-  } = useForm<CommentFormType>({
+  } = useForm<DataFormType>({
     defaultValues: {},
   });
 
-  const submit = (data: CommentFormType): void => {
+  const submit = (data: DataFormType): void => {
     if (value?.length === 0) {
       setFormError('Leave a comment!');
     } else {

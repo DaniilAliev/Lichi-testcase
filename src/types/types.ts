@@ -22,8 +22,8 @@ export type ButtonType = {
 };
 
 export type DataFormType = {
-  title: string,
+  title?: string,
   body: string,
 }
 
-export type CommentFormType = Omit<DataFormType, 'title'>;
+// export type CommentFormType = Omit<DataFormType, 'title'>;

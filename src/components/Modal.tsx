@@ -5,8 +5,8 @@ import { createPortal } from 'react-dom';
 import { motion } from 'framer-motion';
 import { useSelector } from 'react-redux';
 import { selectors as modalSelectors } from '@/slices/modalSlice.ts';
-import CommentForm from './CommentForm.tsx';
 import CommentsContainer from './CommentsContainer.tsx';
+import Form from './Form.tsx';
 
 const Modal = () => {
   const ref = useRef<Element | null>(null);
@@ -51,7 +51,7 @@ const Modal = () => {
               <h1 className="text-3xl mb-4">{title}</h1>
               <p className="mb-4">{body}</p>
               <CommentsContainer id={postId} type='modal'/>
-              <CommentForm />
+              <Form type='comment'/>
             </div>
           </div>
         </motion.div>
